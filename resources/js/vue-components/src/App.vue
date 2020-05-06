@@ -14,7 +14,7 @@
                     active-text-color="#ffd04b">
                     <el-menu-item index="0" :route="{name: 'login'}" v-show="!authenticated">
                         <i class="el-icon-menu"></i>
-                        <span>Login</span>
+                        <span>{{ $t('login') }}</span>
                     </el-menu-item>
 
                 </el-menu>
@@ -44,7 +44,7 @@
                             Dashboard
                         </el-breadcrumb-item>
                         <el-breadcrumb-item>
-                            <a href="/login">Login</a>
+                            <a href="/login">{{ $t('login')}}</a>
                         </el-breadcrumb-item>
                     </el-breadcrumb>
 
