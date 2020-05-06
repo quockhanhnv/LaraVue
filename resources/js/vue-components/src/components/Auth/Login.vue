@@ -4,7 +4,7 @@
         <a href="#" @click="setLocale('vn')"><flag iso="vn"></flag></a> &nbsp;
         <a href="#" @click="setLocale('jp')"><flag iso="jp"></flag></a> &nbsp;
         <div class="login-container">
-            <el-form :model="user" status-icon label-width="120px" class="demo-ruleForm">
+            <el-form :model="user" status-icon label-width="120px" class="demo-ruleForm" :rules="rules" ref="ruleForm">
                 <el-form-item label="" prop="email">
                     <label>{{ $t('email') }}</label>
                     <el-input type="text" size="small" v-model="user.email"></el-input>
@@ -34,6 +34,16 @@
                 user: {
                     email: '',
                     password: '',
+                },
+
+                rules: {
+                    email: [
+                        { required: true, message: 'Please input your email', trigger: 'blur' }
+                    ],
+                    password: [
+                        { required: true, message: 'Please input your password', trigger: 'blur' }
+                    ]
+
                 }
             }
         },
